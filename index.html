@@ -9,7 +9,6 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            /* 全局统一换成可爱手写体 */
             font-family: 'Comic Sans MS', 'Marker Felt', '微软雅黑', sans-serif;
         }
 
@@ -41,10 +40,10 @@
             text-align: center;
         }
 
-            .page.active {
-                opacity: 1;
-                pointer-events: auto;
-            }
+        .page.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
         .text-animate {
             opacity: 0;
@@ -76,9 +75,8 @@
             0% {
                 transform: rotate(0deg);
             }
-
             100% {
-                transform: rotate(90deg); 
+                transform: rotate(90deg);
             }
         }
 
@@ -87,7 +85,6 @@
                 transform: scale(0);
                 opacity: 0.8;
             }
-
             100% {
                 transform: scale(10);
                 opacity: 0;
@@ -112,8 +109,6 @@
             transition: transform 0.2s;
         }
 
-          
-
         .lang-switch {
             margin-top: 20px;
             color: #888;
@@ -125,9 +120,9 @@
             font-weight: 300;
         }
 
-            #page2 h1 span {
-                color: #4285F4;
-            }
+        #page2 h1 span {
+            color: #4285F4;
+        }
 
         #page2 p {
             margin-top: 10px;
@@ -149,8 +144,9 @@
         }
 
         #page5 {
-            background-size: cover;
-            background-position: center;
+            background-size: cover;           /* 改动1：图片覆盖整个容器，不留白边 */
+            background-position: center;      /* 改动2：图片居中显示 */
+            background-repeat: no-repeat;     /* 改动3：禁止重复 */
             transition: background-image 0.6s ease;
         }
 
@@ -161,11 +157,11 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
-            .text-box p {
-                color: #000000;
-                font-size: clamp(1.2rem, 4vw, 2rem);
-                line-height: 1.8;
-            }
+        .text-box p {
+            color: #000000;
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            line-height: 1.8;
+        }
 
         .btn, .page, .text-box {
             touch-action: manipulation;
@@ -175,14 +171,14 @@
             position: relative;
         }
 
-            #page5 .text-box {
-                position: absolute;
-                top: 75%;
-                left: 25%;
-                transform: translate(-50%, -50%);
-                width: 80%;
-                max-width: 600px;
-            }
+        #page5 .text-box {
+            position: absolute;
+            top: 75%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+        }
 
         @media (orientation: landscape) {
             #page5 .text-box {
@@ -200,12 +196,10 @@
     <div class="page active" id="page1">
         <h1 class="text-animate">Ready for a surprise? 🎁</h1>
         <button class="btn text-animate" onclick="goToPage(2); playMusic();">Yes, Open It!</button>
-       
     </div>
 
     <div class="page" id="page2" onclick="goToPage(3)">
         <h1 class="text-animate">Hi <span>小熊</span></h1>
-       
     </div>
 
     <div class="page" id="page3" onclick="goToPage(4)">
